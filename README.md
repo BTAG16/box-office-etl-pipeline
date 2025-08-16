@@ -16,25 +16,6 @@
 
 ---
 
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Architecture](#architecture)
-- [Tech Stack](#tech-stack)
-- [Quick Start](#quick-start)
-- [Detailed Setup](#detailed-setup)
-- [Usage](#usage)
-- [API Documentation](#api-documentation)
-- [Dashboard Screenshots](#dashboard-screenshots)
-- [Project Structure](#project-structure)
-- [Database Schema](#database-schema)
-- [Contributing](#contributing)
-- [Troubleshooting](#troubleshooting)
-- [License](#license)
-
----
-
 ## 🎯 Overview
 
 This project demonstrates a complete **end-to-end data engineering pipeline** that:
@@ -87,42 +68,6 @@ Perfect for demonstrating **data engineering**, **cloud architecture**, and **bu
 - **Monitoring**: Comprehensive logging and alerting
 
 ---
-
-## 🏗️ Architecture
-
-```mermaid
-graph TB
-    subgraph "Data Sources"
-        A[TMDb API]
-    end
-    
-    subgraph "AWS Cloud"
-        B[Lambda Function<br/>ETL Pipeline]
-        C[S3 Bucket<br/>Raw Data Storage]
-        D[RDS PostgreSQL<br/>Structured Data]
-        E[CloudWatch<br/>Scheduling & Logs]
-    end
-    
-    subgraph "Presentation Layer"
-        F[Streamlit Dashboard<br/>Data Visualization]
-        G[GitHub Repository<br/>Source Code]
-    end
-    
-    A --> B
-    B --> C
-    B --> D
-    E --> B
-    D --> F
-    G --> F
-    
-    classDef aws fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:#fff
-    classDef data fill:#4285f4,stroke:#1a73e8,stroke-width:2px,color:#fff
-    classDef presentation fill:#FF4B4B,stroke:#FF4B4B,stroke-width:2px,color:#fff
-    
-    class B,C,D,E aws
-    class A,D data  
-    class F,G presentation
-```
 
 ### Data Flow
 
@@ -333,38 +278,21 @@ DB_CONFIG = {
 }
 ```
 
-#### Key Queries
-```sql
--- Top movies by popularity
-SELECT m.title, ds.popularity, ds.vote_average 
-FROM movies m 
-JOIN daily_stats ds ON m.id = ds.movie_id 
-ORDER BY ds.popularity DESC 
-LIMIT 10;
-
--- Genre performance
-SELECT g.name, AVG(ds.popularity) as avg_popularity
-FROM genres g
-JOIN movie_genres mg ON g.id = mg.genre_id
-JOIN daily_stats ds ON mg.movie_id = ds.movie_id
-GROUP BY g.name;
-```
-
 ---
 
 ## 📸 Dashboard Screenshots
 
 ### Main Dashboard View
-![Main Dashboard]<img width="1895" height="966" alt="Screenshot 2025-08-16 210602" src="https://github.com/user-attachments/assets/d5346326-6eae-4304-a3d4-e4496ab16d3a" />
+<img width="1895" height="966" alt="Screenshot 2025-08-16 210602" src="https://github.com/user-attachments/assets/d5346326-6eae-4304-a3d4-e4496ab16d3a" />
 
 *Real-time movie popularity tracking with interactive charts*
 
 ### Genre Analytics
-![Genre Analytics]<img width="1844" height="548" alt="Screenshot 2025-08-16 210656" src="https://github.com/user-attachments/assets/b8575192-c238-418c-be75-41c8fdd2d63f" />
+<img width="1844" height="548" alt="Screenshot 2025-08-16 210656" src="https://github.com/user-attachments/assets/b8575192-c238-418c-be75-41c8fdd2d63f" />
 *Genre distribution and performance analysis*
 
 ### Trend Analysis
-![Trend Analysis](docs/images/dashboard-trends.png)<img width="1855" height="590" alt="Screenshot 2025-08-16 210708" src="https://github.com/user-attachments/assets/0e56de7e-2b8b-48a5-8d5a-a59b0208dc06" />
+(docs/images/dashboard-trends.png)<img width="1855" height="590" alt="Screenshot 2025-08-16 210708" src="https://github.com/user-attachments/assets/0e56de7e-2b8b-48a5-8d5a-a59b0208dc06" />
 *Historical trends and rating evolution over time*
 
 ---
@@ -600,30 +528,6 @@ This project demonstrates proficiency in:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-```
-MIT License
-
-Copyright (c) 2024 [Your Name]
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
 ---
 
 ## 🙏 Acknowledgments
@@ -632,24 +536,6 @@ SOFTWARE.
 - **[AWS Free Tier](https://aws.amazon.com/free/)** for enabling cost-effective cloud infrastructure
 - **[Streamlit](https://streamlit.io/)** for the amazing dashboard framework
 - **Open Source Community** for the incredible tools and libraries that made this possible
-
----
-
-## 📈 What's Next?
-
-### 🚀 **Upcoming Features**
-- [ ] **Real-time Streaming**: Apache Kafka integration for live updates
-- [ ] **Machine Learning**: Movie popularity prediction models
-- [ ] **Advanced Analytics**: Seasonal trends and box office forecasting
-- [ ] **Multi-region Deployment**: Global dashboard availability
-- [ ] **Mobile App**: React Native companion app
-
-### 🎯 **Enhancement Ideas**
-- **Social Media Integration**: Twitter sentiment analysis
-- **Competitor Analysis**: Multi-studio performance comparison  
-- **Revenue Optimization**: ROI analysis and budget recommendations
-- **A/B Testing**: Dashboard feature experimentation
-- **Data Quality**: Automated data validation and cleansing
 
 ---
 
@@ -662,5 +548,3 @@ SOFTWARE.
 **🔗 Connect with me:** [LinkedIn](https://www.linkedin.com/in/cosmos-junior/) | [Portfolio](https://cosmos-portfolio.framer.website/) | [Email](mailto:rumeighoraye@gmail.com)
 
 </div>
-
-
