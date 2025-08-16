@@ -10,7 +10,7 @@
 
 **A complete data engineering project showcasing ETL pipelines, cloud architecture, and real-time dashboards**
 
-[🎬 Live Dashboard](https://your-dashboard-url.streamlit.app/) | [📖 Documentation](#documentation) | [🚀 Quick Start](#quick-start)
+[🎬 Live Dashboard]((https://boxofficeetl.streamlit.app/)) | [📖 Documentation](#documentation) | [🚀 Quick Start](#quick-start)
 
 </div>
 
@@ -722,3 +722,4 @@ SOFTWARE.
 **🔗 Connect with me:** [LinkedIn](https://linkedin.com/in/yourprofile) | [Portfolio](https://yourwebsite.com) | [Email](mailto:your-email@example.com)
 
 </div>
+
