@@ -10,7 +10,7 @@
 
 **A complete data engineering project showcasing ETL pipelines, cloud architecture, and real-time dashboards**
 
-[🎬 Live Dashboard]((https://boxofficeetl.streamlit.app/)) | [📖 Documentation](#documentation) | [🚀 Quick Start](#quick-start)
+[🎬 Live Dashboard](https://boxofficeetl.streamlit.app/) | [📖 Documentation](#documentation) | [🚀 Quick Start](#quick-start)
 
 </div>
 
