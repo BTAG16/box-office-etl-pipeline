@@ -47,12 +47,17 @@ Perfect for demonstrating **data engineering**, **cloud architecture**, and **bu
 - **Incremental Loading**: Efficient upsert operations
 - **Data Quality**: Validation and cleaning processes
 
+<img width="1919" height="1079" alt="Screenshot 2025-08-16 204535" src="https://github.com/user-attachments/assets/aa12c621-e600-4e86-9dc1-7ded3a237960" />
+
 ### ☁️ **Cloud Infrastructure**
 - **Serverless Architecture**: AWS Lambda for compute
 - **Managed Database**: PostgreSQL on AWS RDS
 - **Object Storage**: Raw data archived in S3
 - **Scheduling**: CloudWatch Events for automation
 - **Monitoring**: CloudWatch Logs for observability
+
+<img width="1410" height="403" alt="Screenshot 2025-08-16 204713" src="https://github.com/user-attachments/assets/47b48731-84d4-4419-9a48-df4dee2e9677" /> <img width="1919" height="1079" alt="Screenshot 2025-08-16 204639" src="https://github.com/user-attachments/assets/770d89bc-d542-4fc7-9274-357b10df2153" />
+<img width="1919" height="1077" alt="Screenshot 2025-08-16 204608" src="https://github.com/user-attachments/assets/819bc534-617e-4913-8e69-10cac35ec4c9" /> <img width="1908" height="894" alt="Screenshot 2025-08-16 204751" src="https://github.com/user-attachments/assets/f91b74e4-e642-4120-ab6b-cc786cd4b78f" />
 
 ### 📊 **Interactive Dashboard**
 - **Real-time Updates**: Data refreshed automatically
@@ -548,3 +553,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **🔗 Connect with me:** [LinkedIn](https://www.linkedin.com/in/cosmos-junior/) | [Portfolio](https://cosmos-portfolio.framer.website/) | [Email](mailto:rumeighoraye@gmail.com)
 
 </div>
+
