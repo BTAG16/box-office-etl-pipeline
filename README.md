@@ -10,7 +10,7 @@
 
 **A complete data engineering project showcasing ETL pipelines, cloud architecture, and real-time dashboards**
 
-[🎬 Live Dashboard](https://boxofficeetl.streamlit.app/) | [📖 Documentation](#documentation) | [🚀 Quick Start](#quick-start)
+[🎬 Live Dashboard](https://boxofficeetl.streamlit.app/) | [📖 Documentation](#documentation)
 
 </div>
 
@@ -355,15 +355,16 @@ GROUP BY g.name;
 ## 📸 Dashboard Screenshots
 
 ### Main Dashboard View
-![Main Dashboard](docs/images/dashboard-main.png)
+![Main Dashboard]<img width="1895" height="966" alt="Screenshot 2025-08-16 210602" src="https://github.com/user-attachments/assets/d5346326-6eae-4304-a3d4-e4496ab16d3a" />
+
 *Real-time movie popularity tracking with interactive charts*
 
 ### Genre Analytics
-![Genre Analytics](docs/images/dashboard-genres.png)
+![Genre Analytics]<img width="1844" height="548" alt="Screenshot 2025-08-16 210656" src="https://github.com/user-attachments/assets/b8575192-c238-418c-be75-41c8fdd2d63f" />
 *Genre distribution and performance analysis*
 
 ### Trend Analysis
-![Trend Analysis](docs/images/dashboard-trends.png)
+![Trend Analysis](docs/images/dashboard-trends.png)<img width="1855" height="590" alt="Screenshot 2025-08-16 210708" src="https://github.com/user-attachments/assets/0e56de7e-2b8b-48a5-8d5a-a59b0208dc06" />
 *Historical trends and rating evolution over time*
 
 ---
@@ -372,87 +373,32 @@ GROUP BY g.name;
 
 ```
 box-office-dashboard/
+├── 📁 config/                       # Configuration Management
+│   ├── 🔒 .env                      # Environment variables (keep secret!)
+│   └── ⚙️ config.py                 # Application configuration
+├── 📁 dashboard/                    # Streamlit Dashboard
+│   ├── 🎨 app.py                    # Main dashboard application
+│   └── 📋 requirements.txt          # Dashboard dependencies
 ├── 📁 etl/                          # ETL Pipeline Components
 │   ├── 🐍 extract.py                # Data extraction from TMDb API
-│   ├── 🔄 transform.py              # Data transformation and cleaning
-│   ├── 💾 load.py                   # Database loading operations
 │   ├── ⚡ lambda_handler.py         # AWS Lambda entry point
-│   └── 📋 requirements.txt          # ETL dependencies
-├── 📁 dashboard/                     # Streamlit Dashboard
-│   ├── 🎨 app.py                    # Main dashboard application
-│   ├── 📊 components/               # Dashboard components
-│   │   ├── charts.py                # Chart generation functions
-│   │   └── metrics.py               # Metrics calculation
-│   └── 📋 requirements.txt          # Dashboard dependencies
-├── 📁 config/                       # Configuration Management
-│   ├── ⚙️ config.py                 # Application configuration
-│   └── 🔒 .env.example              # Environment variables template
-├── 📁 sql/                          # Database Scripts
-│   ├── 🏗️ schema.sql                # Database schema creation
-│   ├── 🔍 queries.sql               # Common analytical queries
-│   └── 🧪 test_data.sql             # Sample data for testing
-├── 📁 docs/                         # Documentation
-│   ├── 📖 setup-guide.md            # Detailed setup instructions
-│   ├── 🔧 troubleshooting.md        # Common issues and solutions
-│   └── 📸 images/                   # Screenshots and diagrams
-├── 📁 tests/                        # Test Suite
-│   ├── 🧪 test_extract.py           # ETL extraction tests
-│   ├── 🧪 test_transform.py         # Data transformation tests
-│   └── 🧪 test_dashboard.py         # Dashboard functionality tests
-├── 📋 requirements.txt              # Main project dependencies
-├── 🚀 .github/workflows/            # CI/CD Pipeline
-│   └── deploy.yml                   # Automated deployment
-├── 📝 README.md                     # This file
-├── 📜 LICENSE                       # MIT License
-└── 🙈 .gitignore                    # Git ignore rules
+│   ├── 💾 load.py                   # Database loading operations
+│   └── 🔄 transform.py              # Data transformation and cleaning
+├── 📁 etl_testers/                  # ETL Testing & Validation
+│   ├── 🧪 etl_tester.py             # Main ETL pipeline tester
+│   ├── 💾 load_test.py              # Database loading tests
+│   └── 🔄 transform_test.py         # Data transformation tests
+├── 📁 lambda-deployment/            # Lambda Deployment Package
+│   ├── 📁 config/                   # Config files for Lambda
+│   ├── ⚙️ extract.py                # Packaged extraction module
+│   ├── ⚡ lambda_function.py        # Lambda deployment handler
+│   ├── 💾 load.py                   # Packaged loading module
+│   ├── 📋 requirements.txt          # Lambda dependencies
+│   └── 🔄 transform.py              # Packaged transformation module
+├── 🙈 .gitignore                    # Git ignore rules
+└── 📝 README.md                     # This comprehensive guide
 ```
-
 ---
-
-## 🗃️ Database Schema
-
-### Entity Relationship Diagram
-```mermaid
-erDiagram
-    movies ||--o{ movie_genres : has
-    genres ||--o{ movie_genres : belongs_to
-    movies ||--o{ daily_stats : tracks
-    
-    movies {
-        int id PK
-        int tmdb_id UK
-        string title
-        date release_date
-        text overview
-        string poster_path
-        int runtime
-        bigint budget
-        bigint revenue
-        timestamp created_at
-        timestamp updated_at
-    }
-    
-    genres {
-        int id PK
-        int tmdb_genre_id UK
-        string name
-    }
-    
-    movie_genres {
-        int movie_id PK,FK
-        int genre_id PK,FK
-    }
-    
-    daily_stats {
-        int id PK
-        int movie_id FK
-        date date
-        decimal popularity
-        decimal vote_average
-        int vote_count
-        timestamp created_at
-    }
-```
 
 ### Table Descriptions
 
@@ -470,12 +416,12 @@ erDiagram
 We welcome contributions! Here's how you can help:
 
 ### 🐛 Bug Reports
-- Use the [Issue Tracker](https://github.com/yourusername/box-office-dashboard/issues)
+- Use the [Issue Tracker](https://github.com/BTAG16/box-office-dashboard/issues)
 - Include detailed reproduction steps
 - Provide error logs and screenshots
 
 ### 💡 Feature Requests
-- Check existing [Feature Requests](https://github.com/yourusername/box-office-dashboard/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
+- Check existing [Feature Requests](https://github.com/BTAG16/box-office-dashboard/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
 - Describe the business value
 - Include mockups if applicable
 
@@ -603,16 +549,16 @@ def load_dashboard_data():
 ### Getting Help
 
 - 📖 [Documentation](docs/)
-- 💬 [GitHub Discussions](https://github.com/yourusername/box-office-dashboard/discussions)
-- 🐛 [Issue Tracker](https://github.com/yourusername/box-office-dashboard/issues)
-- 📧 Email: your-email@example.com
+- 💬 [GitHub Discussions](https://github.com/BTAG16/box-office-dashboard/discussions)
+- 🐛 [Issue Tracker](https://github.com/BTAG16/box-office-dashboard/issues)
+- 📧 Email: rumeighoraye@gmail.com
 
 ---
 
 ## 📊 Project Metrics
 
 ### Performance
-- **⚡ ETL Pipeline**: Processes 100+ movies in < 2 minutes
+- **⚡ ETL Pipeline**: Processes 50+ movies in < 2 minutes
 - **📊 Dashboard Loading**: Sub-second query response times
 - **☁️ Lambda Cold Start**: < 10 seconds initialization
 - **💾 Database Size**: ~50MB for 1000 movies + 30 days stats
@@ -624,7 +570,7 @@ def load_dashboard_data():
 - **📅 Historical Data**: Configurable retention period
 
 ### Reliability
-- **⏰ Uptime**: 99.9% dashboard availability
+- **⏰ Uptime**: 99.5% dashboard availability
 - **🔄 Data Freshness**: Daily automated updates
 - **🛡️ Error Handling**: Graceful failures with notifications
 - **📧 Monitoring**: CloudWatch alerts for critical issues
@@ -641,12 +587,6 @@ This project demonstrates proficiency in:
 - **Database Design**: Relational modeling and optimization
 - **API Integration**: RESTful API consumption and rate limiting
 - **Data Visualization**: Interactive dashboard development
-
-### 💼 **Business Skills**
-- **Requirements Analysis**: Converting business needs to technical solutions
-- **Data Storytelling**: Presenting insights through effective visualization
-- **Project Management**: End-to-end delivery of data products
-- **Documentation**: Comprehensive technical and user documentation
 
 ### 🚀 **DevOps & Best Practices**
 - **Infrastructure as Code**: Reproducible AWS deployments
@@ -717,9 +657,10 @@ SOFTWARE.
 
 ### 🌟 **If this project helped you, please give it a star!** ⭐
 
-**Built with ❤️ by [Your Name](https://github.com/yourusername)**
+**Built by [Cosmos Junior](https://github.com/BTAG16)**
 
-**🔗 Connect with me:** [LinkedIn](https://linkedin.com/in/yourprofile) | [Portfolio](https://yourwebsite.com) | [Email](mailto:your-email@example.com)
+**🔗 Connect with me:** [LinkedIn](https://www.linkedin.com/in/cosmos-junior/) | [Portfolio](https://cosmos-portfolio.framer.website/) | [Email](mailto:rumeighoraye@gmail.com)
 
 </div>
+
 
